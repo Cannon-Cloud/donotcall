@@ -58,9 +58,8 @@ export class Index1Component implements OnInit {
   }
 
   private _addDoNotCall(doNotCall: DoNotCall) {
-    this.doNotCallService
-      .createDoNotCall(doNotCall)
-      .subscribe((doNotCall: DoNotCall) => {
+    this.doNotCallService.createDoNotCall(doNotCall).subscribe(
+      (doNotCall: DoNotCall) => {
         this.notifier.show({
           type: "success",
           message: "Sucessfully added to Do Not Call List",
@@ -68,9 +67,17 @@ export class Index1Component implements OnInit {
         timer(2000)
           .toPromise()
           .then(() => {
-            this.location.go("https://smapp.works");
+            this.isSubmitted = false;
+            this.form.reset();
           });
-      });
+      },
+      () => {
+        this.notifier.show({
+          type: "error",
+          message: "Was not able to add to Do Not Call List",
+        });
+      }
+    );
   }
 
   get doNotCallForm() {
