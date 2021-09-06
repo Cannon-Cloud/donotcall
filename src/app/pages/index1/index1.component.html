@@ -1,0 +1,126 @@
+<!-- STRAT NAVBAR -->
+<!-- <nav
+  class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark"
+  id="navbar"
+>
+  <div class="container">
+    <a class="navbar-brand" href="#">Smapp - Do Not Call Registration</a>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mx-auto" id="navbar-navlist">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript: void(0);">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://smapp.works">Smapp Mainsite</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+<!-- END NAVBAR -->
+
+<!-- START HOME -->
+<div>
+  <section class="section bg-home" id="home">
+    <div class="home-center">
+      <div class="home-desc-center">
+        <div class="container">
+          <div class="row vertical-content">
+            <div class="col-lg-7">
+              <div>
+                <h1 class="text-white home-title mb-0">
+                  Please fill out the form to be added to our do not call list
+                </h1>
+              </div>
+            </div>
+            <div class="col-lg-5 mt-3">
+              <div class="home-registration-form mx-auto bg-white w-75 p-4">
+                <h5 class="form-title mb-4 text-center fw-bold">
+                  Register to Not Be Contacted
+                </h5>
+
+                <notifier-container></notifier-container>
+
+                <form [formGroup]="form" class="registration-form">
+                  <label class="text-muted">First Name</label>
+                  <input
+                    formControlName="firstName"
+                    type="text"
+                    id="firstName"
+                    class="form-control mb-2 registration-input-box"
+                  />
+                  <small
+                    *ngIf="doNotCallForm.firstName.invalid && isSubmitted"
+                    class="error"
+                    >First Name is required</small
+                  ><br />
+                  <label class="text-muted">Last Name</label>
+                  <input
+                    formControlName="lastName"
+                    type="text"
+                    id="lastName"
+                    class="form-control mb-2 registration-input-box"
+                  />
+                  <small
+                    *ngIf="doNotCallForm.lastName.invalid && isSubmitted"
+                    class="error"
+                    >Last Name is required</small
+                  ><br />
+                  <label class="text-muted">Company Name</label>
+                  <input
+                    formControlName="companyName"
+                    type="text"
+                    id="companyName"
+                    class="form-control mb-2 registration-input-box"
+                  />
+                  <small
+                    *ngIf="doNotCallForm.companyName.invalid && isSubmitted"
+                    class="error"
+                    >Company Name is required</small
+                  ><br />
+                  <label class="text-muted">Email</label>
+                  <input
+                    formControlName="email"
+                    type="email"
+                    id="email"
+                    class="form-control mb-2 registration-input-box"
+                  />
+                  <small
+                    *ngIf="doNotCallForm.email.invalid && isSubmitted"
+                    class="error"
+                  >
+                    Email is required</small
+                  ><br />
+                  <label class="text-muted">Phone Number</label>
+                  <input
+                    formControlName="phone"
+                    type="text"
+                    id="phone"
+                    class="form-control mb-2 registration-input-box"
+                  />
+                  <small
+                    *ngIf="doNotCallForm.phone.invalid && isSubmitted"
+                    class="error"
+                  >
+                    Phne Number is required</small
+                  ><br />
+                  <button
+                    (click)="onSubmit()"
+                    class="btn btn-primary w-100 mt-3 text-uppercase"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- END HOME -->
+
+  <app-footer></app-footer>
+</div>
